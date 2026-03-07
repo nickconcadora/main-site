@@ -15,107 +15,97 @@ export default function Reviews() {
       <Header />
       <main>
         <section className="page-header">
-          <h1>Client Reviews</h1>
-          <p>Real feedback from people I&apos;ve worked with.</p>
+          <div className="container">
+            <h1>Client Reviews</h1>
+            <p>Real feedback from people I&apos;ve worked with.</p>
+          </div>
         </section>
 
-        <section className="testimonials">
-          {testimonials.map((n) => (
-            <div className="testimonial-card" key={n}>
-              <img
-                src={`/testimonials/testimonial-${n}.jpg`}
-                alt={`Client testimonial ${n}`}
-                className="testimonial-image"
-                onError={(e) => { e.target.style.display = 'none' }}
-              />
+        <section className="testimonials-section">
+          <div className="container">
+            <div className="testimonials-grid">
+              {testimonials.map((n) => (
+                <div className="testimonial-card" key={n}>
+                  <img
+                    src={`/testimonials/testimonial-${n}.jpg`}
+                    alt={`Client testimonial ${n}`}
+                    className="testimonial-image"
+                    onError={(e) => { e.target.style.display = 'none' }}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </section>
 
         <section className="cta-section">
-          <h2>Ready to Work Together?</h2>
-          <p>Book a free call and let&apos;s talk about your copy needs.</p>
-          <a href="/#audit" className="cta-button cta-outlined">Book Free Call</a>
+          <div className="container">
+            <h2>Ready to Work Together?</h2>
+            <p>Book a free call and let&apos;s talk about your copy needs.</p>
+            <a href="/#audit" className="cta-button">Book Free Call</a>
+          </div>
         </section>
       </main>
       <Footer />
 
       <style jsx>{`
         .page-header {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 3rem 1.5rem 2rem;
-          text-align: center;
+          background: #111111;
+          border-bottom: 4px solid #ffd700;
+          padding: 4rem 0 3rem;
         }
-        h1 {
+        .page-header h1 {
           font-size: clamp(2rem, 7vw, 3rem);
           font-weight: 900;
-          margin-bottom: 1rem;
-          background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #c41e3a 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #ffffff;
+          margin-bottom: 0.75rem;
         }
         .page-header p {
           font-size: clamp(1rem, 3vw, 1.2rem);
-          color: #d4d4d4;
-          max-width: 700px;
-          margin: 0 auto;
+          color: #aaaaaa;
         }
-        .testimonials {
-          max-width: 1200px;
-          margin: 2rem auto;
-          padding: 0 1.5rem 3rem;
+        .testimonials-section { padding: 4rem 0; }
+        .testimonials-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           gap: 1.5rem;
         }
         .testimonial-card {
-          background: rgba(20, 20, 20, 0.8);
-          padding: 1rem;
-          border-radius: 12px;
-          border: 1px solid rgba(80, 80, 80, 0.3);
-          transition: all 0.3s ease;
+          border: 1px solid #e5e5e5;
+          border-top: 3px solid #c41e3a;
+          border-radius: 8px;
+          overflow: hidden;
+          transition: box-shadow 0.3s ease;
         }
         .testimonial-card:hover {
-          border-color: rgba(196, 30, 58, 0.5);
-          transform: translateY(-5px);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
         .testimonial-image {
           width: 100%;
           height: auto;
-          border-radius: 8px;
           display: block;
         }
         .cta-section {
-          background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-          padding: 3rem 1.5rem;
+          background: #111111;
+          padding: 4rem 0;
           text-align: center;
+          border-top: 4px solid #ffd700;
         }
         .cta-section h2 {
-          color: #ffd700;
           font-size: clamp(1.75rem, 6vw, 2.5rem);
+          font-weight: 900;
+          color: #ffffff;
           margin-bottom: 1rem;
         }
         .cta-section p {
-          color: #f5f5f5;
+          color: #aaaaaa;
           font-size: clamp(1rem, 3vw, 1.2rem);
           margin-bottom: 2rem;
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .cta-outlined {
-          background: #0a0a0a !important;
-          border: 2px solid #ffd700 !important;
-        }
-        .cta-outlined:hover {
-          background: #1a1a1a !important;
         }
         @media (max-width: 768px) {
-          .page-header { padding: 2rem 1rem 1.5rem; }
-          .testimonials { grid-template-columns: 1fr; padding: 0 1rem 2rem; }
-          .cta-section { padding: 2rem 1rem; }
+          .page-header { padding: 3rem 0 2rem; }
+          .testimonials-grid { grid-template-columns: 1fr; }
+          .cta-section { padding: 3rem 0; }
         }
       `}</style>
     </>
