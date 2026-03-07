@@ -12,7 +12,7 @@ export async function getServerSideProps({ req, res }) {
   try {
     const sql = getDb()
     const posts = await sql`
-      SELECT id, title, slug, published, created_at
+      SELECT id, title, slug, published, views, created_at
       FROM posts
       ORDER BY created_at DESC
     `
@@ -97,7 +97,7 @@ export default function AdminDashboard({ posts }) {
                     </span>
                     <h3>{post.title}</h3>
                     <span className="post-meta">
-                      {formatDate(post.created_at)} · /blog/{post.slug}
+                      {formatDate(post.created_at)} · {(post.views || 0).toLocaleString()} views · /blog/{post.slug}
                     </span>
                   </div>
                   <div className="post-actions">

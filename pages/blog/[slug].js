@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import Link from 'next/link'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
@@ -31,6 +32,13 @@ function formatDate(iso) {
 }
 
 export default function BlogPost({ post }) {
+  useEffect(() => {
+    fetch('/api/posts/view', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug: post.slug }),
+    })
+  }, [post.slug])
   const desc = post.meta_description || post.excerpt || `Read ${post.title} on the TTW Enterprises blog.`
 
   return (
