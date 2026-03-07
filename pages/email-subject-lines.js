@@ -79,10 +79,6 @@ export default function EmailSubjectLines() {
                 templates that get your emails <strong>noticed and opened.</strong>
               </p>
 
-              {/* Book cover */}
-              <div className="book-wrap">
-                <img src="/book-cover.png" alt="Email Subject Line Guide" className="book-img" />
-              </div>
             </div>
 
             {/* Right: form */}
@@ -94,6 +90,11 @@ export default function EmailSubjectLines() {
                     <span className="highlight">10 Copy &amp; Paste</span> Subject Line Templates
                     Anyone Can Use
                   </p>
+                </div>
+
+                {/* Book cover inside form card */}
+                <div className="book-wrap">
+                  <img src="/book-cover.png" alt="Email Subject Line Guide" className="book-img" />
                 </div>
 
                 {!submitted ? (
@@ -240,8 +241,8 @@ export default function EmailSubjectLines() {
           margin-bottom: 2.5rem;
         }
         .pitch-p strong { color: #e8b800; }
-        .book-wrap { max-width: 260px; }
-        .book-img { width: 100%; border-radius: 6px; box-shadow: 0 16px 48px rgba(0,0,0,0.5); }
+        .book-wrap { padding: 1.5rem 2rem 0; }
+        .book-img { width: 100%; max-height: 280px; object-fit: contain; border-radius: 4px; }
 
         /* Form card */
         .guide-form-wrap { position: sticky; top: 88px; }
@@ -358,7 +359,7 @@ export default function EmailSubjectLines() {
           .guide-grid { grid-template-columns: 1fr; gap: 3rem; }
           .guide-form-wrap { position: static; }
           .guide-main { padding: 3.5rem 0 4rem; }
-          .book-wrap { display: none; }
+          /* book stays in card on mobile */
         }
         @media (max-width: 640px) {
           .form-body { padding: 1.5rem 1.5rem 0; }
