@@ -147,7 +147,7 @@ export default function AdminDashboard({ posts }) {
         h1 {
           font-size: 1.5rem;
           font-weight: 900;
-          color: #ffd700;
+          color: #ffd700 !important;
         }
         h1 span { color: #c41e3a; }
         .view-site {
@@ -156,7 +156,7 @@ export default function AdminDashboard({ posts }) {
           text-decoration: none;
           transition: color 0.2s ease;
         }
-        .view-site:hover { color: #ffd700; }
+        .view-site:hover { color: #ffd700 !important; }
         .logout-btn {
           background: none;
           border: 1px solid rgba(80,80,80,0.5);
@@ -164,6 +164,7 @@ export default function AdminDashboard({ posts }) {
           padding: 0.5rem 1rem;
           border-radius: 6px;
           cursor: pointer;
+          display: inline-block;
           font-size: 0.85rem;
           transition: all 0.2s ease;
         }
@@ -193,8 +194,10 @@ export default function AdminDashboard({ posts }) {
           margin-top: 0.25rem;
         }
         .new-post-btn {
-          background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-          color: white;
+          display: inline-block;
+          color: #ffffff !important;
+          background: #c41e3a;
+          color: #ffffff !important;
           padding: 0.75rem 1.5rem;
           border-radius: 8px;
           text-decoration: none;
@@ -205,7 +208,7 @@ export default function AdminDashboard({ posts }) {
         .new-post-btn:hover {
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(196,30,58,0.4);
-          color: white;
+          color: #ffffff !important;
         }
         .posts-table {
           display: flex;
@@ -253,7 +256,7 @@ export default function AdminDashboard({ posts }) {
         }
         .status-badge.published {
           background: rgba(48, 209, 88, 0.15);
-          color: #30D158;
+          color: #30D158 !important;
         }
         .status-badge.draft {
           background: rgba(255, 214, 10, 0.15);
@@ -270,35 +273,36 @@ export default function AdminDashboard({ posts }) {
           font-size: 0.8rem;
           font-weight: 600;
           cursor: pointer;
+          display: inline-block;
           border: none;
           text-decoration: none;
           transition: all 0.2s ease;
         }
-        .action-btn.view {
-          background: rgba(80,80,80,0.3);
-          color: #d4d4d4;
+        .action-btn.view { display: inline-block;
+          background: #3a3a3a;
+          color: #d4d4d4 !important;
         }
-        .action-btn.view:hover { background: rgba(80,80,80,0.5); color: #f5f5f5; }
+        .action-btn.view:hover { background: #4a4a4a; color: #f5f5f5; }
         .action-btn.edit {
-          background: rgba(255,214,10,0.15);
-          color: #ffd700;
+          background: #2d2800;
+          color: #ffd700 !important;
         }
-        .action-btn.edit:hover { background: rgba(255,214,10,0.3); }
+        .action-btn.edit:hover { background: #3d3800; }
         .action-btn.publish {
-          background: rgba(48,209,88,0.15);
-          color: #30D158;
+          background: #0d2b14;
+          color: #30D158 !important;
         }
-        .action-btn.publish:hover { background: rgba(48,209,88,0.3); }
+        .action-btn.publish:hover { background: #1a4726; }
         .action-btn.unpublish {
-          background: rgba(255,214,10,0.1);
+          background: #2a2a2a;
           color: #888;
         }
-        .action-btn.unpublish:hover { background: rgba(255,59,48,0.15); color: #FF3B30; }
+        .action-btn.unpublish:hover { background: #3d1212; color: #FF3B30; }
         .action-btn.delete {
-          background: rgba(255,59,48,0.1);
+          background: #2d0d0d;
           color: #FF3B30;
         }
-        .action-btn.delete:hover { background: rgba(255,59,48,0.25); }
+        .action-btn.delete:hover { background: #4d1a1a; }
         .empty {
           text-align: center;
           padding: 4rem;
