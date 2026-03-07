@@ -98,20 +98,20 @@ export default function Header() {
         }
         .nav-links {
           display: flex;
-          gap: 0;
+          gap: 0.25rem;
           list-style: none;
           height: 100%;
           align-items: center;
         }
         .nav-links a {
           display: block;
-          padding: 0 1rem;
+          padding: 0 1.1rem;
           height: 64px;
           line-height: 64px;
           color: #444444;
           text-decoration: none;
           font-weight: 500;
-          font-size: 0.9rem;
+          font-size: 0.95rem;
           transition: color 0.2s;
           border-bottom: 3px solid transparent;
           margin-top: 3px;

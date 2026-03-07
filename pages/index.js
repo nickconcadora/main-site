@@ -348,17 +348,19 @@ export default function Home({ posts }) {
         }
         .banner p { color: #888888; font-size: 0.95rem; }
         .banner-btn {
+          display: inline-block;
           background: #ffd700;
-          color: #111111;
-          padding: 0.75rem 1.5rem;
+          color: #111111 !important;
+          padding: 0.875rem 1.75rem;
           border-radius: 6px;
           font-weight: 800;
-          font-size: 0.9rem;
-          text-decoration: none;
+          font-size: 0.95rem;
+          text-decoration: none !important;
           white-space: nowrap;
           transition: background 0.2s;
+          flex-shrink: 0;
         }
-        .banner-btn:hover { background: #e6c200; color: #111111; }
+        .banner-btn:hover { background: #e6c200; }
 
         /* Calendly */
         .calendly-section {
