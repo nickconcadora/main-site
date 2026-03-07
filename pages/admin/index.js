@@ -79,13 +79,13 @@ export default function AdminDashboard({ posts }) {
               <h2>Blog Posts</h2>
               <p className="sub">{posts.length} total post{posts.length !== 1 ? 's' : ''}</p>
             </div>
-            <Link href="/admin/new" className="new-post-btn">+ New Post</Link>
+            <a href="/admin/new" className="new-post-btn">+ New Post</a>
           </div>
 
           {posts.length === 0 ? (
             <div className="empty">
               <p>No posts yet.</p>
-              <Link href="/admin/new" className="new-post-btn">Write your first post →</Link>
+              <a href="/admin/new" className="new-post-btn">Write your first post →</a>
             </div>
           ) : (
             <div className="posts-table">
@@ -101,8 +101,8 @@ export default function AdminDashboard({ posts }) {
                     </span>
                   </div>
                   <div className="post-actions">
-                    <Link href={`/blog/${post.slug}`} target="_blank" className="action-btn view">View</Link>
-                    <Link href={`/admin/edit/${post.id}`} className="action-btn edit">Edit</Link>
+                    <a href={`/blog/${post.slug}`} target="_blank" className="action-btn view">View</a>
+                    <a href={`/admin/edit/${post.id}`} className="action-btn edit">Edit</a>
                     <button
                       onClick={() => handleTogglePublish(post.id, post.published)}
                       className={`action-btn ${post.published ? 'unpublish' : 'publish'}`}
