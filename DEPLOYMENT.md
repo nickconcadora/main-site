@@ -1,87 +1,103 @@
-# TTW Enterprises - Deployment Guide
+# 🚀 Pre-Deployment Checklist
 
-## What's Changed
-Your site has been rebuilt in Next.js with a full blog system and admin dashboard.
-All your existing pages are preserved exactly. Blog lives at /blog. Admin at /admin.
+Before pushing to GitHub and deploying to Vercel, make sure you've completed these steps:
+
+## Required Updates
+
+### 1. Calendly Integration
+- [ ] Update `YOUR_CALENDLY_LINK` in `index.html` (line ~273)
+- [ ] Test that the Calendly embed works
+
+### 2. Contact Information
+- [ ] Update email address in `contact.html` 
+- [ ] Change from `contact@ttwenterprises.com` to your real email
+
+### 3. Testimonial Images
+- [ ] Add 6 testimonial images to the `testimonials/` folder
+- [ ] Name them exactly: `testimonial-1.jpg` through `testimonial-6.jpg`
+- [ ] Optimize images (under 500KB each recommended)
+
+### 4. Lead Magnet Form (Optional)
+- [ ] Set up email service provider (ConvertKit, Mailchimp, etc.)
+- [ ] Update form submission code in `email-subject-lines.html` (line ~641)
+- [ ] Replace the commented API endpoint with your actual endpoint
+- [ ] Test form submission
+
+## GitHub Setup
+
+### 5. Create Repository
+```bash
+cd ttw-website
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin [YOUR_GITHUB_REPO_URL]
+git push -u origin main
+```
+
+## Vercel Deployment
+
+### 6. Deploy to Vercel
+1. Go to https://vercel.com
+2. Sign in with GitHub
+3. Click "New Project"
+4. Import your repository
+5. Click "Deploy" (no configuration needed)
+
+### 7. Custom Domain (Optional)
+- [ ] Add your custom domain in Vercel settings
+- [ ] Update DNS records as instructed by Vercel
+
+## Testing After Deployment
+
+### 8. Post-Deployment Checks
+- [ ] Visit all pages: Home, Reviews, Contact, Email Landing
+- [ ] Test navigation between pages
+- [ ] Verify images load correctly
+- [ ] Test Calendly booking widget
+- [ ] Test form submission (if integrated)
+- [ ] Check mobile responsiveness
+- [ ] Test on different browsers
+
+## Files Overview
+
+✅ **Core Files (All Present)**
+- index.html - Homepage
+- reviews.html - Reviews page
+- contact.html - Contact page
+- email-subject-lines.html - Lead magnet landing page
+- header.js - Universal navigation
+- book-cover.png - Lead magnet book image
+
+✅ **Configuration Files**
+- vercel.json - Vercel deployment config
+- .gitignore - Git ignore rules
+- README.md - Project documentation
+
+📁 **Assets to Add**
+- testimonials/ - Add your 6 testimonial images here
 
 ---
 
-## Step 1 — Set Up Neon Database (in Vercel)
+## Quick Deploy Commands
 
-1. Go to your Vercel dashboard → Storage tab
-2. Click "Create Database" → choose Neon (Postgres)
-3. Name it "ttw-db", pick the nearest region, click Create
-4. Vercel automatically adds DATABASE_URL to your environment variables
+```bash
+# If you haven't initialized git yet:
+git init
+git add .
+git commit -m "Initial website deployment"
+git branch -M main
 
-Then run the database schema:
-1. In Vercel → Storage → your database → "Query" tab
-2. Paste the contents of setup.sql and click Run
+# Add your GitHub remote:
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
 
----
-
-## Step 2 — Set Environment Variables in Vercel
-
-Go to Vercel → your project → Settings → Environment Variables. Add:
-
-| Variable            | Value                          |
-|---------------------|--------------------------------|
-| ADMIN_PASSWORD      | (choose a strong password)     |
-| SESSION_SECRET      | (random 32+ character string)  |
-| MAILERLITE_API_KEY  | (your existing MailerLite key) |
-| MAILERLITE_GROUP_ID | (your existing group ID)       |
-| RECAPTCHA_SECRET_KEY| (your existing secret key)     |
-
-To generate a SESSION_SECRET, run this in your terminal:
-  node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+# Then deploy via Vercel dashboard or CLI:
+# npm i -g vercel
+# vercel
+```
 
 ---
 
-## Step 3 — Deploy
-
-Replace your current GitHub repo contents with this new project:
-
-1. Back up your current repo if needed
-2. Copy all files from this folder into your local repo
-3. git add .
-4. git commit -m "Rebuild: Next.js with blog and admin"
-5. git push
-
-Vercel auto-deploys on push. Build takes ~1-2 minutes.
-
----
-
-## Step 4 — Copy Your Assets
-
-Copy these files from your old project into /public:
-- favicon.svg
-- favicon.ico
-- book-cover.png
-- testimonials/ folder (all testimonial images)
-
----
-
-## How to Write a Blog Post
-
-1. Go to yoursite.com/admin
-2. Log in with your ADMIN_PASSWORD
-3. Click "+ New Post"
-4. Write your title, content, excerpt, and SEO description
-5. Click "Publish" (or "Save Draft" to come back later)
-
-That's it. Post goes live immediately.
-
----
-
-## URL Structure
-
-| Old URL                        | New URL                        |
-|-------------------------------|-------------------------------|
-| /                             | / (unchanged)                 |
-| /contact.html                 | /contact                      |
-| /reviews.html                 | /reviews                      |
-| /email-subject-lines.html     | /email-subject-lines          |
-| (new)                         | /blog                         |
-| (new)                         | /blog/your-post-slug          |
-| (new)                         | /admin                        |
-
-If you have any links pointing to the old .html URLs, update them.
+**Need Help?** Check the main README.md for detailed instructions.
