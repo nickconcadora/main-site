@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -69,9 +68,10 @@ export default function Home() {
               data-url="https://calendly.com/nickconcadora/discovery-call"
               style={{ minWidth: '320px', height: '630px' }}
             />
-            <Script
+            <script
+              type="text/javascript"
               src="https://assets.calendly.com/assets/external/widget.js"
-              strategy="lazyOnload"
+              async
             />
           </div>
         </section>
@@ -82,30 +82,27 @@ export default function Home() {
         .hero {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 3rem 1.5rem;
+          padding: 4rem 1.5rem;
           text-align: center;
         }
         .hero h1 {
           font-size: clamp(2rem, 8vw, 3.5rem);
           font-weight: 900;
           margin-bottom: 1rem;
-          background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #c41e3a 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #111111;
           line-height: 1.2;
         }
         .subtitle {
-          font-size: clamp(1rem, 4vw, 1.5rem);
+          font-size: clamp(1rem, 4vw, 1.25rem);
           color: #c41e3a;
           margin-bottom: 1.5rem;
-          font-weight: 600;
+          font-weight: 700;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
         }
         .hero-description {
           font-size: clamp(1rem, 3vw, 1.25rem);
-          color: #d4d4d4;
+          color: #555555;
           max-width: 800px;
           margin: 0 auto 2rem;
           line-height: 1.8;
@@ -119,43 +116,44 @@ export default function Home() {
           gap: 1.5rem;
         }
         .feature-card {
-          background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(20, 20, 20, 0.8) 100%);
+          background: #f9f9f9;
           padding: 1.5rem;
           border-radius: 12px;
-          border: 1px solid rgba(80, 80, 80, 0.3);
+          border: 1px solid #e5e5e5;
+          border-top: 3px solid #c41e3a;
           transition: all 0.3s ease;
         }
         .feature-card:hover {
-          border-color: rgba(196, 30, 58, 0.5);
+          border-color: #c41e3a;
           transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(196, 30, 58, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
         .feature-icon {
           width: 50px;
           height: 50px;
-          background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+          background: #111111;
           border-radius: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           font-weight: bold;
-          color: #ffffff;
+          color: #ffd700;
           margin-bottom: 1rem;
         }
         .feature-card h3 {
-          color: #ffd700;
+          color: #111111;
           font-size: clamp(1.25rem, 4vw, 1.5rem);
           margin-bottom: 1rem;
         }
         .feature-card p {
-          color: #d4d4d4;
+          color: #555555;
           line-height: 1.8;
         }
         .stats {
-          background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-          padding: 2rem 1.5rem;
-          margin: 2rem 0;
+          background: #111111;
+          padding: 3rem 1.5rem;
+          margin: 3rem 0;
         }
         .stats-container {
           max-width: 1200px;
@@ -172,31 +170,33 @@ export default function Home() {
           margin-bottom: 0.5rem;
         }
         .stat-item p {
-          color: #f5f5f5;
+          color: #cccccc;
           font-size: clamp(0.9rem, 3vw, 1.1rem);
           text-transform: uppercase;
           letter-spacing: 1px;
         }
         .calendly-section {
+
           max-width: 1200px;
           margin: 2rem auto;
           padding: 0 1.5rem 3rem;
         }
         .calendly-container {
-          background: rgba(20, 20, 20, 0.8);
-          border: 1px solid rgba(196, 30, 58, 0.3);
+          background: #f9f9f9;
+          border: 1px solid #e5e5e5;
+          border-top: 3px solid #c41e3a;
           border-radius: 12px;
           padding: 1.5rem;
         }
         .calendly-container h2 {
-          color: #ffd700;
+          color: #111111;
           text-align: center;
           margin-bottom: 1rem;
           font-size: clamp(1.5rem, 5vw, 2rem);
         }
         .calendly-container p {
           text-align: center;
-          color: #d4d4d4;
+          color: #555555;
           margin-bottom: 2rem;
         }
         @media (max-width: 768px) {

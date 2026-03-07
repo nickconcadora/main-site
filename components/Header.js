@@ -47,13 +47,12 @@ export default function Header() {
       </nav>
       <style jsx>{`
         nav {
-          background: rgba(10, 10, 10, 0.95);
-          border-bottom: 2px solid #c41e3a;
+          background: #111111;
+          border-bottom: 3px solid #ffd700;
           padding: 1rem;
           position: sticky;
           top: 0;
           z-index: 100;
-          backdrop-filter: blur(10px);
         }
         .nav-container {
           max-width: 1200px;
@@ -68,11 +67,12 @@ export default function Header() {
           gap: 0.5rem;
           font-size: clamp(1.1rem, 4vw, 1.5rem);
           font-weight: bold;
-          color: #ffd700;
+          color: #ffffff;
           text-decoration: none;
+          letter-spacing: 1px;
         }
         .logo span {
-          color: #c41e3a;
+          color: #ffd700;
         }
         .logo:hover {
           color: #ffd700;
@@ -83,7 +83,7 @@ export default function Header() {
           list-style: none;
         }
         .nav-links a {
-          color: #f5f5f5;
+          color: #cccccc;
           text-decoration: none;
           font-weight: 500;
           font-size: clamp(0.9rem, 2vw, 1rem);
@@ -143,14 +143,14 @@ export default function Header() {
             top: 70px;
             right: -100%;
             flex-direction: column;
-            background: rgba(10, 10, 10, 0.98);
+            background: #111111;
             width: 100%;
             max-width: 300px;
             padding: 2rem;
             gap: 1.5rem;
-            border-left: 2px solid #c41e3a;
+            border-left: 3px solid #ffd700;
             transition: right 0.3s ease;
-            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
           }
           .nav-links.active {
             right: 0;
