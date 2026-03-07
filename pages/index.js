@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -68,10 +69,9 @@ export default function Home() {
               data-url="https://calendly.com/nickconcadora/discovery-call"
               style={{ minWidth: '320px', height: '630px' }}
             />
-            <script
-              type="text/javascript"
+            <Script
               src="https://assets.calendly.com/assets/external/widget.js"
-              async
+              strategy="lazyOnload"
             />
           </div>
         </section>
