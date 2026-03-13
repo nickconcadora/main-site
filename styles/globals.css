@@ -306,7 +306,7 @@ input, textarea { font-family: inherit; }
 .post-content h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
 .post-content h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
 .post-content p {
-  color: #444;
+  color: var(--black);
   font-size: clamp(1rem, 2vw, 1.08rem);
   line-height: 1.85;
   margin-bottom: 1.5rem;
