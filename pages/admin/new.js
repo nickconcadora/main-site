@@ -368,7 +368,16 @@ export const editorStyles = `
     background: rgba(0,0,0,0.4);
     border: 1px solid rgba(80,80,80,0.3);
     border-radius: 0 0 8px 8px;
+    color: #f5f5f5;
   }
+  .preview-box h2 { color: #ffd700; font-size: 1.5rem; font-weight: 800; margin: 32px 0 12px; }
+  .preview-box h3 { color: #c41e3a; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 24px 0 10px; }
+  .preview-box p { margin-bottom: 16px; }
+  .preview-box strong { color: #fff; font-weight: 700; }
+  .preview-box blockquote { border-left: 3px solid #c41e3a; padding: 12px 18px; margin: 20px 0; background: rgba(196,30,58,0.08); color: #f0f0f0; }
+  .preview-box a { color: #ffd700; }
+  .preview-box ul, .preview-box ol { padding-left: 24px; margin-bottom: 16px; }
+  .preview-box hr { border: none; border-top: 1px solid rgba(196,30,58,0.3); margin: 32px 0; }
   .editor-sidebar { display: flex; flex-direction: column; gap: 1rem; }
   .sidebar-card {
     background: rgba(20,20,20,0.8);
