@@ -145,7 +145,7 @@ export default function NewPost() {
                   </>
                 ) : (
                   <div
-                    className="preview-box post-content"
+                    className="preview-box"
                     dangerouslySetInnerHTML={{ __html: content || '<p style="color:#666">Nothing to preview yet.</p>' }}
                   />
                 )}
