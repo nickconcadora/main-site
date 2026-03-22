@@ -127,7 +127,7 @@ export default function EditPost({ post }) {
                     <RichEditor value={content} onChange={setContent} />
                   </>
                 ) : (
-                  <div className="preview-box post-content" dangerouslySetInnerHTML={{ __html: content }} />
+                  <div className="preview-box" dangerouslySetInnerHTML={{ __html: content }} />
                 )}
               </div>
             </div>
