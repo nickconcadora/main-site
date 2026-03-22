@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { getSession } from '../../lib/session'
+import RichEditor from '../../components/RichEditor'
 
 export async function getServerSideProps({ req, res }) {
   const session = await getSession(req, res)
@@ -140,42 +141,7 @@ export default function NewPost() {
 
                 {tab === 'write' ? (
                   <>
-                    <div className="toolbar">
-                      {[
-                        ['B', '<strong>$</strong>'],
-                        ['I', '<em>$</em>'],
-                        ['H2', '<h2>$</h2>'],
-                        ['H3', '<h3>$</h3>'],
-                        ['Quote', '<blockquote>$</blockquote>'],
-                        ['Link', '<a href="">$</a>'],
-                        ['UL', '<ul>\n  <li>$</li>\n</ul>'],
-                        ['P', '<p>$</p>'],
-                      ].map(([label, tag]) => (
-                        <button
-                          key={label}
-                          type="button"
-                          onClick={() => {
-                            const ta = document.getElementById('content-editor')
-                            const start = ta.selectionStart
-                            const end = ta.selectionEnd
-                            const selected = content.substring(start, end) || 'text here'
-                            const newText = tag.replace('$', selected)
-                            setContent(content.substring(0, start) + newText + content.substring(end))
-                            setTimeout(() => { ta.focus(); ta.selectionStart = start + newText.length; ta.selectionEnd = start + newText.length }, 0)
-                          }}
-                          className="toolbar-btn"
-                        >
-                          {label}
-                        </button>
-                      ))}
-                    </div>
-                    <textarea
-                      id="content-editor"
-                      value={content}
-                      onChange={(e) => setContent(e.target.value)}
-                      placeholder="Write your post content here in HTML. Use the toolbar above for quick formatting, or type tags manually. Example:&#10;&#10;<p>Your paragraph here.</p>&#10;&#10;<h2>A subheading</h2>&#10;&#10;<p>More content...</p>"
-                      className="content-textarea"
-                    />
+                    <RichEditor value={content} onChange={setContent} />
                   </>
                 ) : (
                   <div

@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { getSession } from '../../../lib/session'
 import { getDb } from '../../../lib/db'
 import { editorStyles } from '../new'
+import RichEditor from '../../../components/RichEditor'
 
 export async function getServerSideProps({ req, res, params }) {
   const session = await getSession(req, res)
@@ -123,29 +124,7 @@ export default function EditPost({ post }) {
                 </div>
                 {tab === 'write' ? (
                   <>
-                    <div className="toolbar">
-                      {[
-                        ['B', '<strong>$</strong>'], ['I', '<em>$</em>'],
-                        ['H2', '<h2>$</h2>'], ['H3', '<h3>$</h3>'],
-                        ['Quote', '<blockquote>$</blockquote>'], ['Link', '<a href="">$</a>'],
-                        ['UL', '<ul>\n  <li>$</li>\n</ul>'], ['P', '<p>$</p>'],
-                      ].map(([label, tag]) => (
-                        <button key={label} type="button" onClick={() => {
-                          const ta = document.getElementById('content-editor')
-                          const start = ta.selectionStart
-                          const end = ta.selectionEnd
-                          const selected = content.substring(start, end) || 'text here'
-                          const newText = tag.replace('$', selected)
-                          setContent(content.substring(0, start) + newText + content.substring(end))
-                        }} className="toolbar-btn">{label}</button>
-                      ))}
-                    </div>
-                    <textarea
-                      id="content-editor"
-                      value={content}
-                      onChange={(e) => setContent(e.target.value)}
-                      className="content-textarea"
-                    />
+                    <RichEditor value={content} onChange={setContent} />
                   </>
                 ) : (
                   <div className="preview-box post-content" dangerouslySetInnerHTML={{ __html: content }} />
