@@ -368,7 +368,7 @@ export const editorStyles = `
     background: rgba(0,0,0,0.4);
     border: 1px solid rgba(80,80,80,0.3);
     border-radius: 0 0 8px 8px;
-    color: #f5f5f5;
+    color: #f5f5f5 !important;
   }
   .preview-box h2 { color: #ffd700; font-size: 1.5rem; font-weight: 800; margin: 32px 0 12px; }
   .preview-box h3 { color: #c41e3a; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 24px 0 10px; }
