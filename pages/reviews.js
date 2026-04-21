@@ -23,21 +23,21 @@ export default function Reviews() {
           </div>
         </div>
 
-        // <section className="reviews-section">
-        //   <div className="container">
-        //     <div className="reviews-grid">
-        //       {images.map(n => (
-        //         // <div className="review-card" key={n}>
-        //         //   // <img
-        //         //   //   // src={`/testimonials/testimonial-${n}.jpg`}
-        //         //   //   alt={`Client testimonial ${n}`}
-        //         //   //   onError={e => { e.target.style.display = 'none' }}
-        //         //   // />
-        //         // </div>
-        //       ))}
-        //     </div>
-        //   </div>
-        // </section>
+        <section className="reviews-section">
+          <div className="container">
+            <div className="reviews-grid">
+              {images.map(n => (
+                <div className="review-card" key={n}>
+                  <img
+                    src={`/testimonials/testimonial-${n}.jpg`}
+                    alt={`Client testimonial ${n}`}
+                    onError={e => { e.target.style.display = 'none' }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="cta-band">
           <div className="container">
