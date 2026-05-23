@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 
 export default function Reviews() {
   // Only load images that exist: testimonial-1.jpg and testimonial-2.jpg
-  const images = [1, 2]
+  const images = [1, 2, 3, 4]
 
   return (
     <>
