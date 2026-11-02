@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import WorkCard from '../components/WorkCard'
+import { featuredWork } from '../lib/work'
 import { site } from '../lib/site'
 import styles from '../styles/Home.module.css'
 
@@ -20,24 +22,6 @@ export async function getServerSideProps() {
     return { props: { posts: [] } }
   }
 }
-
-const projects = [
-  {
-    number: '01', type: 'AI + CONTENT', title: 'Find the moment. Skip the scrubbing.',
-    description: 'Custom keyword search tools for video and image libraries, using transcripts to make content easier to find and reuse.',
-    detail: 'Transcript search · Media organization · Content repurposing',
-  },
-  {
-    number: '02', type: 'AI + FOLLOW-UP', title: 'Give every lead a next step.',
-    description: 'AI chatbots, appointment setters, and GoHighLevel workflows that connect conversations with follow-up and booking.',
-    detail: 'AI assistants · GHL management · Lead follow-up',
-  },
-  {
-    number: '03', type: 'WEBSITES + CONVERSION', title: 'Connect the offer to the sale.',
-    description: 'Shopify website management and sales pages, with the copy and implementation handled together.',
-    detail: 'Shopify · Sales pages · Direct-response copy',
-  },
-]
 
 const faqs = [
   ['Who is this for?', 'Businesses with an offer to sell and a marketing operation that needs hands-on help. That can mean an online store, a coach, a creator, or a service business. The starting point is the problem you need solved.'],
@@ -109,11 +93,9 @@ export default function Home({ posts = [] }) {
 
         <section id="work" className={styles.work} aria-labelledby="work-heading">
           <div className="container">
-            <div className={styles.workHeading}><div><p className={styles.eyebrow}>02 / WORK IN PRACTICE</p><h2 id="work-heading">Built around real<br />{' '}<em>business problems.</em></h2></div><p>A few examples of what I build and manage alongside email marketing.</p></div>
-            <div className={styles.projectGrid}>{projects.map(project => <article className={styles.project} key={project.number}>
-              <div className={styles.projectTop}><span>{project.type}</span><span>{project.number}</span></div><h3>{project.title}</h3><p>{project.description}</p><div className={styles.projectDetail}>{project.detail}</div>
-            </article>)}</div>
-            <div className={styles.videoNote}><span aria-hidden="true">↳</span><p><strong>Content belongs in the system, too.</strong> I also use AI-assisted video editing to turn existing footage into content for your marketing.</p></div>
+            <div className={styles.workHeading}><div><p className={styles.eyebrow}>02 / WORK IN PRACTICE</p><h2 id="work-heading">Real projects.<br />{' '}<em>Take a closer look.</em></h2></div><p>Read the email copy, try the search tools, and explore the websites I’ve worked on.</p></div>
+            <div className={styles.projectGrid}>{featuredWork.map(project => <WorkCard key={project.slug} project={project} dark />)}</div>
+            <div className={styles.workFooter}><p>Email campaigns, AI tools, and websites. The work behind the services.</p><Link href="/work">Explore all six projects <span aria-hidden="true">↗</span></Link></div>
           </div>
         </section>
 
