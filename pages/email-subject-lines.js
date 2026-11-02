@@ -47,36 +47,37 @@ export default function EmailSubjectLines() {
     <>
       <Head>
         <title>Fix Your Email Open Rates — Free Guide</title>
-        <meta name="description" content="Download 10 copy & paste subject line templates to skyrocket your email open rates. Free guide from TTW Enterprises." />
+        <meta name="description" content="Get 10 subject line templates to try in your next email campaign. A free guide from Nick Concadora." />
+        <link rel="canonical" href="https://nickycopy.com/email-subject-lines" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`} async />
       </Head>
 
       <Header />
 
-      <main className="guide-main">
+      <main id="main-content" className="guide-main">
         <div className="container">
           <div className="guide-grid">
 
             {/* Left: pitch */}
             <div className="guide-pitch">
               <span className="tag-red">Free Guide</span>
-              <h1>Your emails<br /><em>aren't getting opened.</em></h1>
+              <h1>Give your emails<br /><em>a better first impression.</em></h1>
               <p className="pitch-sub">
-                Most email subject lines are bland, forgettable, and ignored.
-                Here's what's actually killing your open rates:
+                You have something useful to say. Start with a subject line
+                that gives the right reader a reason to open.
               </p>
               <ul className="pain-list">
-                <li>15% open rates — if you're lucky</li>
-                <li>Emails buried and invisible in the inbox</li>
-                <li>Thousands in sales lost every single week</li>
+                <li>Move beyond generic announcements</li>
+                <li>Make the value of your email clearer</li>
+                <li>Try a fresh angle in your next campaign</li>
               </ul>
               <div className="callout">
-                Low open rates aren't a delivery problem. They're a <strong>copywriting problem.</strong>
+                Better subject lines start with a clear reason to open. This guide helps with <strong>that first impression.</strong>
               </div>
               <p className="pitch-p">
                 Download this free guide to get 10 copy-and-paste subject line
-                templates that get your emails <strong>noticed and opened.</strong>
+                templates to <strong>adapt, test, and make your own.</strong>
               </p>
 
             </div>
@@ -215,7 +216,7 @@ export default function EmailSubjectLines() {
           line-height: 1.5;
         }
         .pain-list li::before {
-          content: '✗';
+          content: '↗';
           position: absolute;
           left: 0;
           color: #c41e3a;

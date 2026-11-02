@@ -53,7 +53,7 @@ export default function BlogPost({ post }) {
       </Head>
       <Header />
 
-      <main>
+      <main id="main-content">
         {/* Post header */}
         <div className="post-hero">
           <div className="container">

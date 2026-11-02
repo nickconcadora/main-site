@@ -35,16 +35,17 @@ export default function Blog({ posts }) {
   return (
     <>
       <Head>
-        <title>Blog — TTW Enterprises</title>
-        <meta name="description" content="Copywriting tips, marketing insights, and practical advice to help your business grow." />
+        <title>Marketing Notes | Nick Concadora</title>
+        <meta name="description" content="Notes on email marketing, copywriting, and putting marketing to work. From Nick Concadora, Email Marketing & AI Automation Specialist." />
+        <link rel="canonical" href="https://nickycopy.com/blog" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
       <Header />
-      <main>
+      <main id="main-content">
         <div className="page-hero">
           <div className="container">
-            <h1>The Blog</h1>
-            <p>Copywriting tips, marketing insights, and straight talk about what actually works.</p>
+            <h1>Notes on marketing.</h1>
+            <p>Email, copywriting, and the thinking behind the work.</p>
           </div>
         </div>
 

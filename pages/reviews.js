@@ -3,19 +3,20 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 export default function Reviews() {
-  // Only load images that exist: testimonial-1.jpg and testimonial-2.jpg
+  // Preserve all four testimonials from the live website.
   const images = [1, 2, 3, 4]
 
   return (
     <>
       <Head>
-        <title>Client Reviews — TTW Enterprises</title>
-        <meta name="description" content="Real feedback from clients who've worked with TTW Enterprises copywriting services." />
+        <title>Client Reviews | Nick Concadora</title>
+        <meta name="description" content="Client feedback on working with Nick Concadora: email marketing, copywriting, and hands-on execution." />
+        <link rel="canonical" href="https://nickycopy.com/reviews" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
       <Header />
 
-      <main>
+      <main id="main-content">
         <div className="page-hero">
           <div className="container">
             <h1>Client Reviews</h1>
@@ -44,7 +45,7 @@ export default function Reviews() {
             <div className="cta-band-inner">
               <div>
                 <h2>Ready to Work Together?</h2>
-                <p>Book a free call and let&apos;s talk about your copy needs.</p>
+                <p>Let’s talk about your email marketing, automation, or next project.</p>
               </div>
               <a href="/#audit" className="btn-red btn-lg">Book a Free Call</a>
             </div>

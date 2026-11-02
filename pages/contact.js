@@ -1,22 +1,24 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { site } from '../lib/site'
 
 export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact — TTW Enterprises</title>
-        <meta name="description" content="Get in touch with TTW Enterprises. Book a free call or send an email to discuss your copywriting project." />
+        <title>Contact Nick Concadora | Email Marketing &amp; AI Automation</title>
+        <meta name="description" content="Talk with Nick Concadora about email marketing, AI automation, Shopify, or your next sales page. Book a discovery call or send an email." />
+        <link rel="canonical" href="https://nickycopy.com/contact" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
       <Header />
 
-      <main>
+      <main id="main-content">
         <div className="page-hero">
           <div className="container">
-            <h1>Get In Touch</h1>
-            <p>Ready to improve your copy? Let&apos;s talk.</p>
+            <h1>Let’s put it to work.</h1>
+            <p>Email revenue, AI automation, or a project that needs both. Tell me where you need a hand.</p>
           </div>
         </div>
 
@@ -26,21 +28,21 @@ export default function Contact() {
 
               {/* Email card */}
               <div className="contact-card">
-                <div className="card-icon">✉</div>
-                <h3>Send an Email</h3>
-                <p>Have a specific question? Drop me a line and I&apos;ll get back to you within 24 hours.</p>
-                <a href="mailto:nick@typethatwrite.co" className="btn-red">
-                  nick@typethatwrite.co
+                <div className="card-icon" aria-hidden="true">✉</div>
+                <h2>Send an email</h2>
+                <p>Tell me about your business, what you want to improve, and what you have in place already.</p>
+                <a href={'mailto:' + site.email} className="btn-red">
+                  {site.email}
                 </a>
               </div>
 
               {/* Call card */}
               <div className="contact-card contact-card-accent">
-                <div className="card-icon">📅</div>
-                <h3>Book a Free Call</h3>
-                <p>The fastest way to get help. I&apos;ll review your copy and tell you exactly what needs fixing — no sales pitch.</p>
-                <a href="/#audit" className="btn-red">
-                  Schedule a Call →
+                <div className="card-icon" aria-hidden="true">↗</div>
+                <h2>Book a discovery call</h2>
+                <p>Let’s talk through the problem, see if we’re a fit, and find a useful place to start. The discovery call is free.</p>
+                <a href={site.bookingUrl} className="btn-red">
+                  Find a time to talk ↗
                 </a>
               </div>
 
@@ -81,7 +83,7 @@ export default function Contact() {
           line-height: 1;
           margin-bottom: 0.5rem;
         }
-        .contact-card h3 {
+        .contact-card h2 {
           font-size: 1.2rem;
           font-weight: 900;
           color: #0f0f0f;

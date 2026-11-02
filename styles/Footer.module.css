@@ -1,0 +1,10 @@
+.footer { background: #1c1d1a; color: #f6f3ec; padding: 39px 0; border-top: 2px solid #c41e3a; }
+.inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
+.brand { font-size: 1.25rem; font-weight: 800; letter-spacing: -1px; }
+.brand span { color: #e6c464; }
+.footer p { font-size: .65rem; color: #bdbeb4; line-height: 1.9; margin-top: 9px; }
+.footer nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 30px; font-size: .72rem; }
+.footer a:hover { color: #e6c464; }
+.contact { text-align: right; }
+.contact a { font-size: .75rem; border-bottom: 1px solid #65665c; padding-bottom: 4px; }
+@media (max-width: 760px) { .inner { flex-wrap: wrap; gap: 30px; } .contact { text-align: left; width: 100%; } }
