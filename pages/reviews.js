@@ -69,7 +69,7 @@ export default function Reviews() {
           border-radius: 8px;
           overflow: hidden;
           border: 1px solid #e8e8e8;
-          border-top: 3px solid #c41e3a;
+          border-top: 3px solid #15171b;
           transition: box-shadow 0.2s;
         }
         .review-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); }
@@ -78,7 +78,7 @@ export default function Reviews() {
         .cta-band {
           background: #0f0f0f;
           padding: 4rem 0;
-          border-top: 3px solid #e8b800;
+          border-top: 3px solid #cbd0d8;
         }
         .cta-band-inner {
           display: flex;

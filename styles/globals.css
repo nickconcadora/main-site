@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    FONTS
 ───────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* ─────────────────────────────────────────
    RESET & BASE
@@ -13,10 +13,10 @@
 }
 
 :root {
-  --red:       #c41e3a;
-  --red-dark:  #8b0000;
-  --gold:      #e8b800;
-  --gold-lt:   #fff9e0;
+  --red:       #15171b;
+  --red-dark:  #34373d;
+  --gold:      #cbd0d8;
+  --gold-lt:   #f5f5f6;
   --black:     #0f0f0f;
   --off-black: #1a1a1a;
   --white:     #ffffff;
@@ -38,7 +38,7 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--white);
   color: var(--black);
   line-height: 1.6;
@@ -102,7 +102,7 @@ input, textarea { font-family: inherit; }
   transition: background 0.15s;
   white-space: nowrap;
 }
-.btn-gold:hover { background: #d4a800; }
+.btn-gold:hover { background: #e7e9ed; }
 
 .btn-outline {
   display: inline-flex;
@@ -145,7 +145,7 @@ input, textarea { font-family: inherit; }
 
 .site-logo {
   font-size: 1.35rem;
-  font-weight: 900;
+  font-weight: 600;
   color: var(--black);
   letter-spacing: -1px;
   text-transform: none;
@@ -156,7 +156,7 @@ input, textarea { font-family: inherit; }
   line-height: 1;
 }
 .site-logo span { color: var(--black); }
-.site-logo .site-logo-dot { color: var(--red); }
+.site-logo .site-logo-dot { color: #888c94; }
 
 .site-nav {
   display: flex;
@@ -193,7 +193,7 @@ input, textarea { font-family: inherit; }
 .site-header-cta {
   flex-shrink: 0;
   gap: 30px;
-  border-radius: 3px;
+  border-radius: 6px;
   font-size: .78rem;
 }
 
@@ -276,12 +276,12 @@ input, textarea { font-family: inherit; }
 ───────────────────────────────────────── */
 .page-hero {
   background: var(--black);
-  border-bottom: 3px solid var(--red);
+  border-bottom: 1px solid #e3e4e7;
   padding: 4rem 0 3.5rem;
 }
 .page-hero h1 {
   font-size: clamp(2rem, 6vw, 3.25rem);
-  font-weight: 900;
+  font-weight: 600;
   color: #fff;
   line-height: 1.1;
   margin-bottom: 0.875rem;
@@ -329,7 +329,7 @@ input, textarea { font-family: inherit; }
   border-left: 4px solid var(--red);
   padding: 1rem 1.5rem;
   margin: 1.75rem 0;
-  background: #fdf5f6;
+  background: #f5f5f6;
   border-radius: 0 var(--radius) var(--radius) 0;
   font-style: italic;
   color: #444;
@@ -341,7 +341,7 @@ input, textarea { font-family: inherit; }
 }
 
 /* Keyboard access, anchor offsets, and reduced-motion preferences. */
-:focus-visible { outline: 3px solid #c41e3a; outline-offset: 4px; }
+:focus-visible { outline: 3px solid #2563eb; outline-offset: 4px; }
 .skip-link { position: fixed; top: 8px; left: 12px; padding: 12px 20px; background: #fff; color: #111; z-index: 500; transform: translateY(-160%); }
 .skip-link:focus { transform: translateY(0); }
 [id] { scroll-margin-top: 90px; }

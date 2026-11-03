@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import WorkCard from '../components/WorkCard'
+import ProofGallery from '../components/ProofGallery'
 import { featuredWork } from '../lib/work'
 import { site } from '../lib/site'
 import styles from '../styles/Home.module.css'
@@ -50,10 +51,10 @@ export default function Home({ posts = [] }) {
           <div className={'container ' + styles.heroGrid}>
             <div>
               <p className={styles.eyebrow}><span className={styles.smallLine} /> Email marketing &amp; AI automation</p>
-              <h1 id="hero-heading">More sales.<br />{' '}<em>Less busywork.</em></h1>
+              <h1 id="hero-heading">Email that sells.<br /><span>AI that gets<br />work done.</span></h1>
               <p className={styles.heroDescription}>I write the emails, build the tools, and connect the systems that help your business sell more and get time back.</p>
               <div className={styles.actions}>
-                <a href={site.bookingUrl} className="btn-red">Let’s talk about your business <span aria-hidden="true">↗</span></a>
+                <a href={site.bookingUrl} className="btn-red">Let’s talk <span aria-hidden="true">↗</span></a>
                 <a href="#work" className={styles.textLink}>See the work <span aria-hidden="true">↓</span></a>
               </div>
               <div className={styles.signature}>
@@ -62,10 +63,10 @@ export default function Home({ posts = [] }) {
               </div>
             </div>
             <aside className={styles.result} aria-label="Email marketing result">
-              <div className={styles.resultTop}><span>THE WORK, IN NUMBERS</span><span aria-hidden="true">↗</span></div>
+              <div className={styles.resultTop}>EMAIL MARKETING</div>
               <p className={styles.resultNumber}>$100k<span>+</span></p>
-              <p className={styles.resultDescription}>generated through<br />{' '}<strong>email marketing</strong><br />{' '}in a 60-day period.</p>
-              <div className={styles.resultBottom}><span>Copy. Campaigns. Execution.</span><a href="#services" aria-label="Explore email marketing services">↗</a></div>
+              <p className={styles.resultDescription}>generated through email marketing<br />in a 60-day period.</p>
+              <div className={styles.resultBottom}>Strategy, copy, and execution.</div>
             </aside>
           </div>
           <div className={'container ' + styles.capabilities} aria-label="Areas of work">
@@ -73,11 +74,21 @@ export default function Home({ posts = [] }) {
           </div>
         </section>
 
+        <ProofGallery />
+
+        <section id="work" className={styles.work} aria-labelledby="work-heading">
+          <div className="container">
+            <div className={styles.workHeading}><div><p className={styles.eyebrow}>SELECTED WORK</p><h2 id="work-heading">See what I’ve built.</h2></div><p>Actual websites and tools. Open a project to see the work and try it yourself.</p></div>
+            <div className={styles.projectGrid}>{featuredWork.map(project => <WorkCard key={project.slug} project={project} />)}</div>
+            <div className={styles.workFooter}><p>From the first idea to the working product.</p><Link href="/work">Explore the work <span aria-hidden="true">↗</span></Link></div>
+          </div>
+        </section>
+
         <section id="services" className={styles.services} aria-labelledby="services-heading">
           <div className="container">
             <div className={styles.sectionHeading}>
-              <p className={styles.eyebrow}>01 / HOW I HELP</p>
-              <div><h2 id="services-heading">Good marketing needs<br />{' '}someone to <em>make it work.</em></h2><p>Two ways to work together. One person who can write it, build it, and keep it moving.</p></div>
+              <p className={styles.eyebrow}>WHAT I DO</p>
+              <div><h2 id="services-heading">The message.<br />The systems behind it.</h2><p>Hands-on help with the writing, the build, and the day-to-day execution.</p></div>
             </div>
             <article className={styles.serviceRow}>
               <div className={styles.serviceName}><span className={styles.serviceNumber}>01</span><h3>Email that earns<br />{' '}its place in the inbox.</h3></div>
@@ -91,33 +102,24 @@ export default function Home({ posts = [] }) {
           </div>
         </section>
 
-        <section id="work" className={styles.work} aria-labelledby="work-heading">
-          <div className="container">
-            <div className={styles.workHeading}><div><p className={styles.eyebrow}>02 / WORK IN PRACTICE</p><h2 id="work-heading">Real projects.<br />{' '}<em>Take a closer look.</em></h2></div><p>Read the email copy, try the search tools, and explore the websites I’ve worked on.</p></div>
-            <div className={styles.projectGrid}>{featuredWork.map(project => <WorkCard key={project.slug} project={project} dark />)}</div>
-            <div className={styles.workFooter}><p>Email campaigns, AI tools, and websites. The work behind the services.</p><Link href="/work">Explore all six projects <span aria-hidden="true">↗</span></Link></div>
-          </div>
-        </section>
-
         <section id="about" className={styles.about} aria-labelledby="about-heading">
           <div className={'container ' + styles.aboutGrid}>
-            <div><p className={styles.eyebrow}>03 / THE PERSON DOING THE WORK</p><div className={styles.profile}><img src="/nick-concadora.jpg" alt="Nick Concadora" width="96" height="96" loading="lazy" /><div><strong>Nick Concadora</strong><span>The person behind NickyCopy.</span></div></div></div>
-            <div><h2 id="about-heading">Copywriter by foundation.<br />{' '}<em>Builder by practice.</em></h2><p>Copywriting is still part of what I do. The work has grown to include the systems around it: email marketing, AI assistants, Shopify websites, sales pages, follow-up, ads, and video.</p><p>That means I can help with both the message and the work needed to get it live. You work directly with me, from figuring out the problem to putting the solution in place.</p><a href="/contact" className={styles.serviceLink}>Tell me what you’re working on <span aria-hidden="true">↗</span></a></div>
+            <div><p className={styles.eyebrow}>WORK DIRECTLY WITH ME</p><div className={styles.profile}><img src="/nick-concadora.jpg" alt="Nick Concadora" width="96" height="96" loading="lazy" /><div><strong>Nick Concadora</strong><span>The person behind NickyCopy.</span></div></div></div>
+            <div><h2 id="about-heading">I write it.<br />I build it. I keep it moving.</h2><p>Copywriting is still part of what I do. The work has grown to include the systems around it: email marketing, AI assistants, Shopify websites, sales pages, follow-up, ads, and video.</p><p>You work directly with me, from figuring out the problem to putting the solution in place.</p><a href="/contact" className={styles.serviceLink}>Tell me what you’re working on <span aria-hidden="true">↗</span></a></div>
           </div>
         </section>
 
         <section className={styles.testimonials} aria-labelledby="testimonials-heading">
           <div className="container">
-            <div className={styles.quoteHeading}><div><p className={styles.eyebrow}>04 / FROM THE PEOPLE I WORK WITH</p><h2 id="testimonials-heading">The work is personal.</h2></div><Link href="/reviews" className={styles.textLink}>Read client reviews <span aria-hidden="true">↗</span></Link></div>
+            <div className={styles.quoteHeading}><div><p className={styles.eyebrow}>CLIENT FEEDBACK</p><h2 id="testimonials-heading">What it’s like to work together.</h2></div><Link href="/reviews" className={styles.textLink}>Read client reviews <span aria-hidden="true">↗</span></Link></div>
             <div className={styles.quoteGrid}>
-              <figure><span className={styles.quoteMark} aria-hidden="true">“</span><blockquote>Once he is signed on, he takes your sales and revenue personally.</blockquote><figcaption><strong>Chad</strong><span>All Eyes DB Camp</span></figcaption></figure>
               <figure><span className={styles.quoteMark} aria-hidden="true">“</span><blockquote>He is also super professional in his communication and always beats the deadlines.</blockquote><figcaption><strong>Feel Tennis</strong><span>feeltennis.net</span></figcaption></figure>
             </div>
           </div>
         </section>
 
         <section className={styles.faq} aria-labelledby="faq-heading">
-          <div className={'container ' + styles.faqGrid}><div><p className={styles.eyebrow}>BEFORE WE TALK</p><h2 id="faq-heading">A few good<br />{' '}<em>questions.</em></h2></div><div>{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div>
+          <div className={'container ' + styles.faqGrid}><div><p className={styles.eyebrow}>BEFORE WE TALK</p><h2 id="faq-heading">A few questions.</h2></div><div>{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div>
         </section>
 
         <section id="audit" className={styles.contact} aria-labelledby="contact-heading">

@@ -90,7 +90,7 @@ export default function Blog({ posts }) {
           gap: 2rem 2.5rem;
         }
         .card {
-          border-top: 3px solid #c41e3a;
+          border-top: 3px solid #15171b;
           padding-top: 1.25rem;
           display: flex;
           flex-direction: column;
@@ -109,7 +109,7 @@ export default function Blog({ posts }) {
           line-height: 1.3;
         }
         .card-title a { color: #0f0f0f; text-decoration: none; transition: color 0.15s; }
-        .card-title a:hover { color: #c41e3a; }
+        .card-title a:hover { color: #15171b; }
         .card-excerpt {
           color: #555;
           font-size: 0.9rem;
@@ -119,7 +119,7 @@ export default function Blog({ posts }) {
         .card-link {
           font-size: 0.82rem;
           font-weight: 700;
-          color: #c41e3a;
+          color: #15171b;
           text-decoration: none;
           transition: color 0.15s;
           margin-top: 0.25rem;
@@ -131,7 +131,7 @@ export default function Blog({ posts }) {
         @media (max-width: 560px) {
           .posts-grid { grid-template-columns: 1fr; gap: 0; }
           .card { padding-top: 1.25rem; padding-bottom: 1.25rem; border-top: none; border-bottom: 1px solid #e8e8e8; }
-          .card:first-child { border-top: 3px solid #c41e3a; }
+          .card:first-child { border-top: 3px solid #15171b; }
         }
       `}</style>
     </>

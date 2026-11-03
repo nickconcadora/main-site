@@ -86,12 +86,12 @@ export default function BlogPost({ post }) {
       <style jsx>{`
         .post-hero {
           background: #0f0f0f;
-          border-bottom: 3px solid #e8b800;
+          border-bottom: 3px solid #cbd0d8;
           padding: 3rem 0 2.75rem;
         }
         .back-link {
           display: inline-block;
-          color: #e8b800;
+          color: #cbd0d8;
           font-weight: 600;
           font-size: 0.85rem;
           text-decoration: none;
@@ -135,7 +135,7 @@ export default function BlogPost({ post }) {
         .post-footer { margin-top: 3.5rem; }
         .cta-box {
           background: #f8f8f8;
-          border-top: 4px solid #c41e3a;
+          border-top: 4px solid #15171b;
           border-radius: 0 0 8px 8px;
           padding: 2.5rem 2rem;
           text-align: center;
@@ -154,7 +154,7 @@ export default function BlogPost({ post }) {
         }
         .back-link-bottom {
           display: inline-block;
-          color: #c41e3a;
+          color: #15171b;
           font-weight: 700;
           font-size: 0.88rem;
           text-decoration: none;

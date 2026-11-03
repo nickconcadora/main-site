@@ -3,16 +3,17 @@ import Head from 'next/head'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import WorkCard from '../../components/WorkCard'
+import ProofGallery from '../../components/ProofGallery'
 import { work } from '../../lib/work'
 import { site } from '../../lib/site'
 import styles from '../../styles/Work.module.css'
 
-const categories = ['All work', 'Email', 'AI tools', 'Websites']
+const categories = ['All work', ...new Set(work.map(project => project.category))]
 
 export default function Work() {
   const [category, setCategory] = useState('All work')
   const visible = category === 'All work' ? work : work.filter(project => project.category === category)
-  const description = 'Explore real email campaign copy, AI search tools, and live websites built by Nick Concadora.'
+  const description = 'Explore screenshots, working AI search tools, and live websites built by Nick Concadora.'
   return <>
     <Head>
       <title>Selected Work | Nick Concadora</title>
@@ -27,13 +28,14 @@ export default function Work() {
     <main id="main-content" className={styles.page}>
       <section className={styles.hero}>
         <div className="container">
-          <p className={styles.eyebrow}>SELECTED WORK / NICK CONCADORA</p>
+          <p className={styles.eyebrow}>SELECTED WORK</p>
           <div className={styles.heroGrid}>
-            <h1>The work,<br /><em>up close.</em></h1>
-            <div><p>Read the emails. Try the tools. Explore the websites.</p><p>Here’s what it looks like when the copy, the build, and the systems come together.</p></div>
+            <h1>Built to<br />be used.</h1>
+            <div><p>Tools you can try.<br />Websites you can explore.</p><p>A closer look at the work, what I handled, and how it fits together.</p></div>
           </div>
         </div>
       </section>
+      <ProofGallery />
       <section className={styles.collection} aria-label="Project portfolio">
         <div className="container">
           <div className={styles.filterBar}>
@@ -46,7 +48,7 @@ export default function Work() {
         </div>
       </section>
       <section className={styles.cta}>
-        <div className="container"><p className={styles.eyebrow}>YOUR BUSINESS, NEXT</p><h2>Have something that<br /><em>needs to work better?</em></h2><p>Let’s talk about the emails, the tools, or the website you need.</p><a href={site.bookingUrl} className="btn-red">Book a free discovery call <span aria-hidden="true">↗</span></a></div>
+        <div className="container"><p className={styles.eyebrow}>YOUR BUSINESS, NEXT</p><h2>What do you need<br />to make happen?</h2><p>Let’s talk about the emails, the tools, or the website you need.</p><a href={site.bookingUrl} className="btn-red">Book a free discovery call <span aria-hidden="true">↗</span></a></div>
       </section>
     </main>
     <Footer />

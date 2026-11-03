@@ -75,7 +75,7 @@ export default function Contact() {
           gap: 0.875rem;
         }
         .contact-card-accent {
-          border-top-color: #c41e3a;
+          border-top-color: #15171b;
           background: #fdf8f8;
         }
         .card-icon {

@@ -172,7 +172,7 @@ export default function EmailSubjectLines() {
         /* Pitch side */
         .tag-red {
           display: inline-block;
-          background: #c41e3a;
+          background: #15171b;
           color: #fff;
           font-size: 0.65rem;
           font-weight: 700;
@@ -191,8 +191,8 @@ export default function EmailSubjectLines() {
           margin-bottom: 1.5rem;
         }
         .guide-pitch h1 em {
-          font-style: italic;
-          color: #c41e3a;
+          font-style: normal;
+          color: #cbd0d8;
         }
         .pitch-sub {
           font-size: 1.05rem;
@@ -219,21 +219,21 @@ export default function EmailSubjectLines() {
           content: '↗';
           position: absolute;
           left: 0;
-          color: #c41e3a;
+          color: #cbd0d8;
           font-weight: 900;
         }
         .callout {
-          background: rgba(232, 184, 0, 0.1);
-          border-left: 4px solid #e8b800;
+          background: rgba(255, 255, 255, 0.06);
+          border-left: 4px solid #cbd0d8;
           padding: 1rem 1.25rem;
-          color: #e8b800;
+          color: #cbd0d8;
           font-size: 1.05rem;
           font-weight: 600;
           line-height: 1.6;
           border-radius: 0 4px 4px 0;
           margin-bottom: 1.75rem;
         }
-        .callout strong { color: #e8b800; }
+        .callout strong { color: #cbd0d8; }
         .pitch-p {
           color: #888;
           font-size: 0.97rem;
@@ -241,7 +241,7 @@ export default function EmailSubjectLines() {
           max-width: 460px;
           margin-bottom: 2.5rem;
         }
-        .pitch-p strong { color: #e8b800; }
+        .pitch-p strong { color: #cbd0d8; }
         .book-wrap { padding: 1.5rem 2rem 0; }
         .book-img { width: 100%; max-height: 280px; object-fit: contain; border-radius: 4px; }
 
@@ -254,7 +254,7 @@ export default function EmailSubjectLines() {
           overflow: hidden;
         }
         .form-card-header {
-          background: #c41e3a;
+          background: #15171b;
           padding: 1.75rem 2rem;
           text-align: center;
         }
@@ -299,13 +299,13 @@ export default function EmailSubjectLines() {
         .field input::placeholder { color: #666; }
         .field input:focus {
           outline: none;
-          border-color: #e8b800;
-          box-shadow: 0 0 0 3px rgba(232,184,0,0.15);
+          border-color: #cbd0d8;
+          box-shadow: 0 0 0 3px rgba(203,208,216,0.15);
         }
         .submit-btn {
           width: 100%;
           padding: 1rem;
-          background: #e8b800;
+          background: #cbd0d8;
           color: #0f0f0f;
           font-size: 1rem;
           font-weight: 800;
@@ -316,14 +316,14 @@ export default function EmailSubjectLines() {
           transition: background 0.15s, transform 0.1s;
           margin-top: 0.5rem;
         }
-        .submit-btn:hover:not(:disabled) { background: #d4a800; transform: translateY(-1px); }
+        .submit-btn:hover:not(:disabled) { background: #e7e9ed; transform: translateY(-1px); }
         .submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
 
         .form-error {
           margin: 1rem 2rem 0;
           padding: 0.875rem 1rem;
           background: rgba(196,30,58,0.15);
-          border: 1px solid #c41e3a;
+          border: 1px solid #15171b;
           border-radius: 6px;
           color: #f87171;
           font-size: 0.88rem;
@@ -350,8 +350,8 @@ export default function EmailSubjectLines() {
         .trust-badge {
           font-size: 0.78rem;
           font-weight: 700;
-          color: #e8b800;
-          background: rgba(232,184,0,0.1);
+          color: #cbd0d8;
+          background: rgba(255,255,255,0.06);
           border-radius: 100px;
           padding: 0.3rem 0.875rem;
         }

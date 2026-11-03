@@ -1,0 +1,14 @@
+.section { padding: 88px 0; border-top: 1px solid var(--border); background: #fff; color: var(--black); }
+.heading { margin-bottom: 36px; }
+.heading > p { font-size: .7rem; font-weight: 600; letter-spacing: .1em; color: #62656c; margin-bottom: 16px; }
+.heading h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 650; letter-spacing: -.045em; line-height: 1.15; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.grid figure { min-width: 0; }
+.grid figure > a { display: block; padding: 12px; background: #f5f5f5; border: 1px solid var(--border); border-radius: 8px; }
+.grid img { width: 100%; height: auto; }
+.grid figcaption { padding-top: 22px; }
+.grid h3 { font-size: 1.25rem; letter-spacing: -.025em; }
+.grid p { font-size: .9rem; color: #62656c; line-height: 1.8; margin-top: 8px; }
+.grid .period { font-size: .75rem; }
+.grid figcaption a { display: inline-block; margin-top: 16px; font-size: .78rem; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 640px) { .section { padding: 52px 0; } .grid { grid-template-columns: 1fr; } }
